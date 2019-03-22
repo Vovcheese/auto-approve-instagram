@@ -12,7 +12,6 @@ program
 	.option('-d, --delay [delay]', 'Delay', 1000)
   .parse(process.argv);
 
-  // console.log(program)
 
 if (!program.username) return console.log('Username is required.');
 if (!program.password) return console.log('Password is required.');
@@ -44,7 +43,7 @@ Client.Session.create(device, storage, program.username, program.password)
   .then((session) => {
     return doApprovePending(session);
   })
-  // console.log(doApprovePending)
+
   .catch(err => {
     console.log(err && err.message || err);
   });
